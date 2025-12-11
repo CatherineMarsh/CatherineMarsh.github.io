@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Christmas List</h1>
+    </header>
+
+    <main class="container">
+        <section class="box left">
+            <label for="new-item" class="visually-hidden">Add new item</label>
+            <div class="add-item-row">
+                <input id="new-item" placeholder="Type an item and press Add" aria-label="New item">
+                <select id="new-item-priority">
+                    <option value="Low">Low</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <button id="add-item">Add</button>
+            </div>
+
+            <ul id="items-list" class="items-list" aria-live="polite"></ul>
+        </section>
+
+        <section class="box right">
+            <div class="generate-row">
+                <label for="priority" class="priority-label">Priority:</label>
+                <select id="priority">
+                    <option value="Low">Low</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <button id="generate-button" aria-label="Generate gift idea">Generate Gift Idea</button>
+            </div>
+
+            <p id="last-idea" class="last-idea" aria-live="polite"></p>
+
+            <div class="controls">
+                <div class="checkbox-row">
+                    <input type="checkbox" id="insert-at-cursor">
+                    <label for="insert-at-cursor">Insert at cursor</label>
+                </div>
+
+                <div class="contacts">
+                    <h4>Contacts</h4>
+                    <div class="add-contact-row">
+                        <input id="contact-value" placeholder="email or phone" aria-label="contact value">
+                        <input id="contact-nickname" placeholder="nickname (Mom, Dad)" aria-label="contact nickname">
+                        <select id="contact-type">
+                            <option value="email">Email</option>
+                            <option value="phone">Phone</option>
+                        </select>
+                        <button id="add-contact">Add</button>
+                    </div>
+                    <ul id="contacts-list" class="contacts-list" aria-live="polite"></ul>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="clear-button" class="secondary">Clear List</button>
+                    <button id="remove-last-button" class="secondary">Remove Last Item</button>
+                    <button id="send-button" class="secondary">Send List</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="notes">
+        <small>Click the big box on the right to add a random gift idea to your list.</small>
+    </footer>
+
+    <script src="christmas-list.js" defer></script>
+</body>
+</html>

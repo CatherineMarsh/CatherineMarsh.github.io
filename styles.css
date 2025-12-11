@@ -1,0 +1,77 @@
+/* Basic reset and typography */
+:root{
+	--bg:#f7f9fb;
+	--card:#ffffff;
+	--accent:#c62828;
+	--muted:#6b6b6b;
+}
+*{box-sizing:border-box}
+body{
+	margin:0;
+	font-family:Segoe UI, Roboto, Arial, sans-serif;
+	background:var(--bg);
+	color:#111;
+	display:flex;
+	flex-direction:column;
+	min-height:100vh;
+}
+header{background:linear-gradient(90deg,#ffe6e6,#fff);padding:28px 20px;text-align:center}
+header h1{margin:0;font-size:2.25rem;color:var(--accent)}
+.container{display:flex;gap:20px;padding:28px;flex:1;max-width:1000px;margin:20px auto;width:calc(100% - 40px)}
+.box{background:var(--card);border-radius:12px;box-shadow:0 6px 18px rgba(15,15,15,0.06);padding:16px;display:flex;flex-direction:column}
+.left{flex:1;min-height:320px}
+.right{width:360px;min-height:320px;align-items:stretch;justify-content:center}
+textarea#list{width:100%;height:100%;resize:vertical;border:1px solid #e5e5e5;border-radius:8px;padding:14px;font-size:1rem;line-height:1.4}
+button#generate-button{background:var(--accent);color:white;border:none;border-radius:10px;padding:18px;font-size:1.1rem;font-weight:600;cursor:pointer;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+button#generate-button:active{transform:translateY(1px)}
+.last-idea{margin-top:12px;color:var(--muted);font-size:0.95rem;text-align:center}
+.notes{max-width:1000px;margin:0 auto 28px;padding:0 20px;color:var(--muted)}
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
+@media (max-width:820px){
+	.container{flex-direction:column}
+	.right{width:100%}
+}
+
+/* Controls inside the right box */
+.controls{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.controls .checkbox-row{display:flex;align-items:center;gap:8px;color:var(--muted)}
+.controls .secondary{background:transparent;color:var(--accent);border:1px solid #eee;padding:10px;border-radius:8px;cursor:pointer}
+.controls .secondary:hover{background:#fff6f6}
+
+@media (max-width:420px){
+	header h1{font-size:1.5rem}
+	.container{padding:16px}
+}
+
+/* New controls styling */
+.generate-row{display:flex;gap:10px;align-items:center;margin-bottom:6px}
+.priority-label{font-weight:600;color:var(--muted)}
+select#priority{padding:8px;border-radius:8px;border:1px solid #e5e5e5}
+.contacts{margin-top:6px}
+.contacts h4{margin:6px 0;color:var(--muted);font-size:0.95rem}
+.add-contact-row{display:flex;gap:8px}
+.add-contact-row input{flex:1;padding:8px;border-radius:8px;border:1px solid #e5e5e5}
+.add-contact-row select{padding:8px;border-radius:8px;border:1px solid #e5e5e5}
+.add-contact-row button{padding:8px;border-radius:8px;border:1px solid #e5e5e5;background:#fff;cursor:pointer}
+.contacts-list{list-style:none;padding:0;margin:8px 0 0;max-height:120px;overflow:auto}
+.contact-row{display:flex;justify-content:space-between;align-items:center;padding:6px 8px;border-radius:6px;border:1px solid #f0f0f0;margin-bottom:6px;background:#fff}
+.contact-text{color:#333;font-size:0.95rem}
+.contact-row .remove-contact{background:transparent;border:1px solid #f2f2f2;padding:6px;border-radius:6px;cursor:pointer}
+.action-buttons{display:flex;gap:8px;margin-top:8px}
+.action-buttons .secondary{padding:8px 10px}
+
+/* Items list styles */
+.items-list{list-style:none;padding:0;margin:8px 0 0;max-height:520px;overflow:auto}
+.item-row{display:flex;gap:10px;align-items:center;padding:10px;border-radius:8px;border:1px solid #f0f0f0;margin-bottom:8px;background:#fff}
+.item-text{flex:1;outline:none}
+.item-row select{padding:6px;border-radius:6px;border:1px solid #e5e5e5}
+.item-row .remove-item{background:transparent;border:1px solid #f2f2f2;padding:6px;border-radius:6px;cursor:pointer}
+
+.add-item-row{display:flex;gap:8px;align-items:center}
+.add-item-row input{flex:1;padding:8px;border-radius:8px;border:1px solid #e5e5e5}
+.add-item-row select{padding:8px;border-radius:8px;border:1px solid #e5e5e5}
+.add-item-row button{padding:8px 10px;border-radius:8px;border:1px solid #e5e5e5;background:#fff;cursor:pointer}
+
+/* contact nickname input sizing */
+.add-contact-row input#contact-nickname{width:140px}
